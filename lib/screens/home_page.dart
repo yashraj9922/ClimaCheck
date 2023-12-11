@@ -74,6 +74,12 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  void _clearTextField() {
+    setState(() {
+      _cityName = ''; // Clear the text field
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,11 +88,13 @@ class _HomePageState extends State<HomePage> {
         title: Padding(
           padding: const EdgeInsets.all(20.0),
           child: TextField(
+            controller: TextEditingController(text: _cityName), // Add this line
             onSubmitted: (value) {
               setState(() {
                 _cityName = value;
               });
               _getWeather(_cityName);
+              _clearTextField(); // Clear the text field after search
             },
             decoration: InputDecoration(
               hintText: 'Enter city name',
