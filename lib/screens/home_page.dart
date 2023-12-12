@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:weather/weather.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
@@ -128,12 +128,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           _locationHeader(),
           SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.06,
+            height: MediaQuery.sizeOf(context).height * 0.05,
           ),
-          _dateTimeInfo(),
-          SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.03,
-          ),
+          // _dateTimeInfo(),
+          // SizedBox(
+          //   height: MediaQuery.sizeOf(context).height * 0.03,
+          // ),
           _weatherIcon(),
           SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.01,
@@ -158,41 +158,41 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _dateTimeInfo() {
-    DateTime now = _weather!.date!;
-    return Column(
-      children: [
-        Text(
-          DateFormat("h:mm a").format(now),
-          style: const TextStyle(
-            fontSize: 35,
-          ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              DateFormat("EEEE").format(now),
-              style: const TextStyle(
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            Text(
-              "  ${DateFormat("d.m.y").format(now)}",
-              style: const TextStyle(
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
+  // Widget _dateTimeInfo() {
+  //   DateTime now = _weather!.date!;
+  //   return Column(
+  //     children: [
+  //       Text(
+  //         DateFormat("h:mm a").format(now),
+  //         style: const TextStyle(
+  //           fontSize: 35,
+  //         ),
+  //       ),
+  //       const SizedBox(
+  //         height: 10,
+  //       ),
+  //       Row(
+  //         mainAxisSize: MainAxisSize.max,
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         crossAxisAlignment: CrossAxisAlignment.center,
+  //         children: [
+  //           Text(
+  //             DateFormat("EEEE").format(now),
+  //             style: const TextStyle(
+  //               fontWeight: FontWeight.w700,
+  //             ),
+  //           ),
+  //           Text(
+  //             "  ${DateFormat("d.m.y").format(now)}",
+  //             style: const TextStyle(
+  //               fontWeight: FontWeight.w400,
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _weatherIcon() {
     return Column(
